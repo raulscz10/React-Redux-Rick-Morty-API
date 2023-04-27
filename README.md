@@ -5,7 +5,6 @@
 - [Descripción](#descripcion)
 - [¿Cómo Usar La Aplicación?](#uso)
 - [Capturas de Pantalla](#capturas)
-- [Contributing](../CONTRIBUTING.md)
 
 ## Descripción <a name = "descripcion"></a>
 
