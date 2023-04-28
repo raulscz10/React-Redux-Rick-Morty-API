@@ -1,7 +1,6 @@
 .Pagination {
-    margin-bottom: 2em;
-
-
+    margin-bottom: 3em;
+    color: var(--bs-gray-600);
 
     .pagination-list {
         display: flex;
@@ -13,12 +12,13 @@
 
         .nav-icon {
             width: 1.3em;
-            fill: #606060;
+            fill: var(--bs-gray-600);
         }
 
         .current-page {
-            font-size: 1.4em;
-            font-weight: 600;
+            font-size: 1.5em;
+            color: var(--bs-primary);
+            font-weight: 500;
         }
 
         button {
@@ -27,16 +27,21 @@
             height: 40px;
             padding: 0;
             background-color: white;
-            border: 1px solid #c3c3c3;
+            border: 1px solid var(--bs-gray-500);
+            color: var(--bs-gray-600);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #606060;
 
             &.active:enabled,
             &:hover:enabled {
-                background-color: #E1E1E1;
+                background-color: var(--bs-primary);
+                color: #fff;
                 cursor: pointer;
+
+                .nav-icon {
+                    fill: #fff
+                }
             }
 
             &:disabled {
@@ -45,8 +50,5 @@
 
         }
     }
-
-
-
 
 }

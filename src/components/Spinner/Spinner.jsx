@@ -17,7 +17,7 @@ export default function Spinner({ loading }) {
          <PulseLoader
             loading={loading}
             cssOverride={override}
-            color={"blue"}
+            color={"var(--bs-primary)"}
             aria-label="Loading Spinner"
             data-testid="loader"
          />

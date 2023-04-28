@@ -1,6 +1,8 @@
 import React from "react";
 import "./Character.scss";
 import { useNavigate } from "react-router-dom";
+import Card from "react-bootstrap/Card";
+import StatusIndicator from "./StatusIndicator/StatusIndicator";
 
 export default function Character({ character }) {
    const navigate = useNavigate();
@@ -12,24 +14,16 @@ export default function Character({ character }) {
 
    return (
       <div className="Character">
-         <div
-            className="card"
-            title="Click for details"
-            onClick={handleClick}
-            style={{ width: "13rem" }}
-         >
-            <img src={character.image} className="card-img-top" alt="..." />
-            <div className="card-body">
-               <h4 className="card-title">{character.name}</h4>
-               <div className="card-description">
-                  <span className={"status-icon " + character.status}></span>
-                  <span className={"status " + character.status}>
-                     {character.status}
-                  </span>{" "}
-                  - {character.species}
-               </div>
-            </div>
-         </div>
+         <Card onClick={handleClick} style={{ width: "18rem" }}>
+            <Card.Img variant="top" src={character.image} />
+            <Card.Body>
+               <Card.Title>{character.name}</Card.Title>
+               <Card.Text className="d-flex align-items-center">
+                  <StatusIndicator status={character.status} />
+                  <span>{character.status}</span> - {character.species}
+               </Card.Text>
+            </Card.Body>
+         </Card>
       </div>
    );
 }

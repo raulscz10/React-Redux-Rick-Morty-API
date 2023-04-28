@@ -6,6 +6,7 @@ import Pagination from "../../components/Pagination/Pagination";
 import Spinner from "../../components/Spinner/Spinner";
 import { useSelector, useDispatch } from "react-redux";
 import { nextPage, prevPage, goToPage } from "./paginationSlice";
+import { Container } from "react-bootstrap";
 
 export default function CharactersList() {
    // hooks
@@ -27,9 +28,10 @@ export default function CharactersList() {
          const response = await rickMortyService.getAllCharacters(page);
          setCharacters(response.results);
          setPages(response.info.pages);
-         setIsLoading(false);
       } catch (error) {
          console.log(error.toString());
+      } finally {
+         setIsLoading(false);
       }
    };
 
@@ -57,15 +59,25 @@ export default function CharactersList() {
 
          {!isLoading && (
             <>
-               <h1>Rick Morty Characters</h1>
-               <Pagination page={page} count={pages} onChange={handleChange} />
+               <Container className="text-center app-container">
+                  <h1 className="mb-5">Rick Morty Characters</h1>
+                  <Pagination
+                     page={page}
+                     count={pages}
+                     onChange={handleChange}
+                  />
 
-               <div className="list">
-                  {characters.map((char) => (
-                     <Character key={char.id} character={char} />
-                  ))}
-               </div>
-               <Pagination page={page} count={pages} onChange={handleChange} />
+                  <div className="list">
+                     {characters.map((char) => (
+                        <Character key={char.id} character={char} />
+                     ))}
+                  </div>
+                  <Pagination
+                     page={page}
+                     count={pages}
+                     onChange={handleChange}
+                  />
+               </Container>
             </>
          )}
       </div>
