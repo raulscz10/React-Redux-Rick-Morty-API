@@ -28,12 +28,12 @@ Paso 3: En la terminar después de ejecutar el comando de arriba hacemos clic en
 
 Imagen principal de la aplicación:
 
-<img src="./src/images/main.PNG" alt="Página Principal" width="500" height="500">
+<img src="./src/_images/main.PNG" alt="Página Principal" width="500" height="500">
 
 Imagen información del personaje ampliada:
 
-<img src="./src/images/detail.PNG" alt="Vista Personaje" width="500" height="500">
+<img src="./src/_images/detail.PNG" alt="Vista Personaje" width="500" height="500">
 
 Imagen About Us
 
-<img src="./src/images/aboutus.PNG" alt="Vista Personaje" width="500" height="500">
+<img src="./src/_images/aboutus.PNG" alt="Vista Personaje" width="500" height="500">
